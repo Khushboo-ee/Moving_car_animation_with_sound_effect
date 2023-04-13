@@ -1,0 +1,90 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    overflow: hidden; /*to hide the scroll bar at the botto as we have kept track width 800vw*/
+}
+.sky{
+    height: 100vh;
+    width: 800vw;
+    background-image: url(background.jpg);
+    background-repeat: repeat-x;
+    /* position: absolute;
+    animation: carMove linear 3s infinite; */
+
+}
+
+.trees{
+    height: 100vh;
+    width: 100%;
+    background-image: url(trees.png);
+    background-size: cover; 
+    position: absolute;
+    top: -144px; 
+}
+
+.track{
+    height: 60vh;
+    width: 800vw;
+    background-image: url(track.png);
+    background-repeat: repeat-x; 
+    position: absolute;
+    top: 70vh;
+    animation: carMove linear 3s infinite;
+
+}
+
+.car{
+    height: 100px;
+    width: 380px;
+    background-image: url(car_body.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 300px;
+    bottom: 16vh;
+    animation: shake linear .3s infinite;
+
+}
+.wheelleft img{
+    width: 77px;
+    position: relative;
+    top:42px;
+    left:42px;
+    animation: wheelRotation linear .16s infinite;
+}
+
+
+.wheelright img{
+    width: 77px;
+    position: relative;
+    top: -39px;
+    left: 235px;
+    animation: wheelRotation linear .16s infinite;
+}
+
+/*animation creation for wheel rotation*/
+@keyframes wheelRotation {
+    100%{
+        transform: rotate(360deg);
+    }
+}
+/*for showing car motion--> Actually moving the track backwards to make look like car moving forward*/
+@keyframes carMove {
+    100%{
+        transform: translateX(-500vh);
+    }
+}
+/*for moving car in y direction */
+@keyframes shake {
+    0%{
+        transform: translateY(-5px);
+    }
+    0%{
+        transform: translateY(5px);
+    }
+    0%{
+        transform: translateY(-5px);
+    }
+}
